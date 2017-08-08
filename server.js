@@ -80,7 +80,7 @@ app.post("/api/dinosaurs", (req, res) => {
 
 app.put("/api/dinosaurs/:id", (req, res) => {
   const dinoId = parseInt(req.params.id)
-  const dinosaur = allDinosaurs.find(dino => dino.id === dinoId)
+  let dinosaur = allDinosaurs.find(dino => dino.id === dinoId)
   dinosaur = {
     id: dinoId,
     name: req.body.name,
